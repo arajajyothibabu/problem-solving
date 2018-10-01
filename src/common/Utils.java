@@ -22,4 +22,34 @@ public class Utils {
         return arr;
     }
 
+    public static Integer arrayMinIndex(Integer[] arr) throws Exception {
+        if(arr.length > 0){
+            Integer temp = arr[0], index = 0;
+            for(Integer i = 0; i < arr.length; i++){
+                if(temp > arr[i]){
+                    temp = arr[i];
+                    index = i;
+                }
+            }
+            return index;
+        }else{
+            throw new Exception("It's an empty Array");
+        }
+    }
+
+    public static Integer arrayMaxIndex(Integer[] arr) throws Exception {
+        if(arr.length > 0){
+            Integer temp = arr[0], index = 0;
+            for(Integer i = 0; i < arr.length; i++){
+                if(temp < arr[i]){
+                    temp = arr[i];
+                    index = i;
+                }
+            }
+            return index;
+        }else{
+            throw new Exception("It's an empty Array");
+        }
+    }
+
 }
