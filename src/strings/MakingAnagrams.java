@@ -2,6 +2,9 @@ package strings;
 
 import java.util.HashMap;
 
+/**
+ * https://www.hackerrank.com/challenges/ctci-making-anagrams
+ */
 public class MakingAnagrams {
 
     static HashMap<Character, Integer> makeMap(String str){
