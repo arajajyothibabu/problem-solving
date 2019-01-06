@@ -1,5 +1,8 @@
 package strings;
 
+/**
+ * https://www.hackerrank.com/challenges/common-child
+ */
 public class CommonChild {
 
     static int commonChild(String s1, String s2) {
