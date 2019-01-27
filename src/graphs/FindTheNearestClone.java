@@ -10,32 +10,6 @@ import java.util.Scanner;
  */
 public class FindTheNearestClone {
 
-    static class Node {
-        int d;
-        int startedFrom;
-        int weight;
-
-        public Node(int d) {
-            this.d = d;
-        }
-
-        public int getStartedFrom() {
-            return startedFrom;
-        }
-
-        public void setStartedFrom(int startedFrom) {
-            this.startedFrom = startedFrom;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
-
-        public void setWeight(int weight) {
-            this.weight = weight;
-        }
-    }
-
     static class Graph {
 
         int vertices;
