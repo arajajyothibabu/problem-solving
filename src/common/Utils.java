@@ -1,5 +1,7 @@
 package common;
 
+import java.util.List;
+
 public class Utils {
 
     public static void swap(Integer a, Integer b){
@@ -55,6 +57,30 @@ public class Utils {
     public static void printArray(int[] arr){
         for (int i = 0; i < arr.length; i++){
             System.out.print(arr[i]);
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
+
+    public static void printArray(char[] arr){
+        for (int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
+
+    public static void printArray(long[] arr){
+        for (int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
+
+    public static <T> void printArray(List<T> arr){
+        for(T i : arr){
+            System.out.print(i);
             System.out.print(", ");
         }
         System.out.println();
