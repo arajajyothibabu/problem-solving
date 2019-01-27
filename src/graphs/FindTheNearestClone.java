@@ -7,6 +7,31 @@ import java.util.Scanner;
 
 /**
  * https://www.hackerrank.com/challenges/find-the-nearest-clone
+ *
+ * Need solution for this logic:
+ * You don't have to do BFS for every node separately, you can do them all in once.
+ * In BFS we store a list of last visited nodes, so instead of starting with one node,
+ * we can start from all nodes of the requested color.
+ *
+ * Draw paths from every node of the same color. As soon as they meet - path is found.
+ *
+ * Instead of just storing was node visited or not, store for each node:
+ *  1. from which starting node it was reached
+ *  2. what was the length of the path
+ *
+ * Initialy every starting node was reached from itself with zero distance, all other nodes are not reached.
+ *
+ * Then let current nodes = all nodes of requested color (not just one node as in usual BFS).
+ *
+ * For every node in list on current nodes:
+ *  For every non-visited neighbor of this node:
+ *      set distance and mark that it was reached from the same node as current node.
+ *
+ * If we found already visited node,
+ *  check that it was reached from another starting node and that path is less than (possibly) previosly found path.
+ *  This is the answer.
+ *
+ * Voila!
  */
 public class FindTheNearestClone {
 
@@ -65,6 +90,13 @@ public class FindTheNearestClone {
     }
 
     static int findShortest(int graphNodes, int[] graphFrom, int[] graphTo, long[] ids, int val) {
+        int maxColors = 0;
+        for(int i = 0; i < ids.length; i++){
+            if(ids[i] == val) maxColors++;
+        }
+        if(maxColors < 2){
+            return -1;
+        }
         int minDist = graphNodes, tempMin;
         Graph graph = new Graph(graphNodes);
         for(int i = 0; i < graphFrom.length; i++){
